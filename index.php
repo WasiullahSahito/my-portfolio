@@ -1,3 +1,34 @@
+<?php 
+require './db.php';
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    $sql = "INSERT INTO contact (name,email,message) VALUES (?,?,?)";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("sss", $name, $email, $message);
+  if ($stmt->execute()) {
+    // Email details
+    $to      = "wasi1237585@gmail.com";
+    $subject = "New Contact Form Submission";
+    $body    = "You have received a new message from $name <$email>:\n\n$message";
+    $headers = "From: $email";
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<script>alert('Message sent successfully!');</script>";
+    } else {
+        echo "<script>alert('Message could not be sent.');</script>";
+    }
+} else {
+    echo "<script>alert('Database insert failed.');</script>";
+}
+
+
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -302,15 +333,15 @@
                     </div>
                 </div>
                 <div>
-                    <form class="space-y-4">
+                    <form class="space-y-4" method="post">
                         <div>
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-indigo-500 bg-opacity-30 border border-indigo-400 focus:outline-none focus:ring-2 focus:ring-white">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-indigo-500 bg-opacity-30 border border-indigo-400 focus:outline-none focus:ring-2 focus:ring-white" name="name">
                         </div>
                         <div>
-                            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-indigo-500 bg-opacity-30 border border-indigo-400 focus:outline-none focus:ring-2 focus:ring-white">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-indigo-500 bg-opacity-30 border border-indigo-400 focus:outline-none focus:ring-2 focus:ring-white" name="email">
                         </div>
                         <div>
-                            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-indigo-500 bg-opacity-30 border border-indigo-400 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-indigo-500 bg-opacity-30 border border-indigo-400 focus:outline-none focus:ring-2 focus:ring-white" name="message"></textarea>
                         </div>
                         <button type="submit" class="bg-white text-indigo-600 px-6 py-2 rounded font-medium hover:bg-gray-100 transition">Send Message</button>
                     </form>
