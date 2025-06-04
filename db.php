@@ -1,5 +1,5 @@
 <?php 
-$con = new mysqli("localhost", "root", "", "my-portfolio");
+$con = new mysqli("localhost", "root", "", "portfolio");
 if($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
