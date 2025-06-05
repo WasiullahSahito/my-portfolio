@@ -1,30 +1,69 @@
 <?php 
-require './db.php';
+$con = mysqli_connect("localhost", "root", "", "portfolio");
+
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
+}
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+require './vendor/autoload.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
+    if(empty($name) || empty($email) || empty($message)) {
+        echo '<div class="alert alert-danger" role="alert">Please fill in all fields.</div>';
+        exit();
+    }    
+    
     $sql = "INSERT INTO contact (name,email,message) VALUES (?,?,?)";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("sss", $name, $email, $message);
-  if ($stmt->execute()) {
-    // Email details
-    $to      = "wasi1237585@gmail.com";
-    $subject = "New Contact Form Submission";
-    $body    = "You have received a new message from $name <$email>:\n\n$message";
-    $headers = "From: $email";
+if($stmt->execute()) {
+    try{
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'wasi1237585@gmail.com';
+        $mail->Password = 'epsy crfw oksi rdld';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        $mail->setFrom($email, $name);
+        $mail->addAddress('wasi1237585@gmail.com', 'Wasiullah Sehto');
+        $mail->addReplyTo($email, $name);
+        $mail->isHTML(true);
+        $mail->Subject = 'New Contact Form Submission';
+        $mail->Body = "
+            <h3>New Message from Portfolio Contact Form</h3>
+            <p><strong>Name:</strong> $name</p>
+            <p><strong>Email:</strong> $email</p>
+            <p><strong>Message:</strong></p>
+            <p>".nl2br(htmlspecialchars($message))."</p>
+        ";
+        $mail->AltBody = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+        
+        $mail->send();
+        echo '<div class="alert alert-success" role="alert">
+    <strong>Success!</strong> Your message has been sent.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Message sent successfully!');</script>";
-    } else {
-        echo "<script>alert('Message could not be sent.');</script>";
     }
-} else {
-    echo "<script>alert('Database insert failed.');</script>";
+    catch(Exception $e){
+        echo '<div class="alert alert-danger" role="alert">
+    <strong>Error!</strong> '.$e->getMessage().'
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+
+    }
+}
 }
 
+    
 
-}
 
 
 
@@ -37,6 +76,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Wasiullah Sehto | Full Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header Section -->
@@ -362,32 +404,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <script src="./script.js"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-        // Smooth scrolling for all navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
 </body>
 </html>
