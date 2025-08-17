@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wasiullah Sehto | Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer specializing in React, Node.js, and modern web technologies. Creating responsive web solutions with robust backend systems.">
+    <meta name="keywords" content="web developer, full stack developer, react, node.js, portfolio, web development">
+    <meta name="author" content="Wasiullah Sehto">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -25,6 +30,7 @@
             --gray: #64748b;
             --card-bg: rgba(15, 23, 42, 0.8);
             --tech-glow: rgba(76, 201, 240, 0.4);
+            --success: #43d787;
         }
         
         body {
@@ -206,6 +212,11 @@
         
         .btn-outline:hover {
             background: var(--primary);
+        }
+        
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
         
         .btn-container {
@@ -488,24 +499,19 @@
         
         .project-image {
             height: 200px;
-            background: linear-gradient(45deg, #3a56d4, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
             position: relative;
             overflow: hidden;
         }
         
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .project-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #3a56d4, #4cc9f0);
+            color: white;
+            font-size: 3rem;
         }
         
         .project-content {
@@ -542,6 +548,134 @@
             border-radius: 20px;
             font-size: 0.85rem;
             border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .project-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.7;
+            position: relative;
+        }
+        
+        .testimonial-content::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 5rem;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h4 {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Insights Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76, 201, 240, 0.1);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .blog-image {
+            height: 180px;
+            background: linear-gradient(45deg, #3a56d4, #4cc9f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .blog-excerpt {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
         
         /* Contact Section */
@@ -625,6 +759,16 @@
             box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
         }
         
+        .success-message {
+            background: var(--success);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+        
         /* Footer */
         footer {
             background: rgba(15, 23, 42, 0.95);
@@ -665,6 +809,56 @@
             color: var(--gray);
             font-size: 0.95rem;
             margin-top: 20px;
+        }
+        
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
         }
         
         /* Responsive Design */
@@ -733,26 +927,13 @@
                 gap: 15px;
             }
             
+            .project-buttons {
+                flex-direction: column;
+            }
+            
             .btn-outline {
                 margin-left: 0;
             }
-        }
-        
-        /* Animations */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        .float {
-            animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
@@ -772,6 +953,8 @@
                     <a href="#about">About</a>
                     <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#insights">Insights</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <button class="mobile-menu-btn">
@@ -925,7 +1108,9 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-paint-brush"></i>
+                        <div class="project-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Oddco Studios Portfolio</h3>
@@ -936,13 +1121,18 @@
                             <div class="tech-item">CSS</div>
                             <div class="tech-item">PHP</div>
                         </div>
-                        <a href="#" class="btn">View Project</a>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-small">View Live</a>
+                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-lock"></i>
+                        <div class="project-placeholder">
+                            <i class="fas fa-lock"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Login Authentication System</h3>
@@ -953,13 +1143,18 @@
                             <div class="tech-item">CSS</div>
                             <div class="tech-item">Security</div>
                         </div>
-                        <a href="#" class="btn">View Project</a>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-small">View Live</a>
+                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-link"></i>
+                        <div class="project-placeholder">
+                            <i class="fas fa-link"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">URL Shortener</h3>
@@ -971,13 +1166,18 @@
                             <div class="tech-item">MySQL</div>
                             <div class="tech-item">Analytics</div>
                         </div>
-                        <a href="#" class="btn">View Project</a>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-small">View Live</a>
+                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-truck"></i>
+                        <div class="project-placeholder">
+                            <i class="fas fa-truck"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Fleet Management System</h3>
@@ -989,7 +1189,105 @@
                             <div class="tech-item">Express.js</div>
                             <div class="tech-item">REST APIs</div>
                         </div>
-                        <a href="#" class="btn">View Project</a>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-small">View Live</a>
+                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Wasiullah delivered a stunning portfolio for our animation studio. His attention to detail and creative problem-solving skills were impressive. The site exceeded our expectations in both design and functionality.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SS</div>
+                        <div class="author-info">
+                            <h4>Samiullah Sehto</h4>
+                            <p>Founder, Oddco Studios</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        The fleet management system developed by Wasiullah has streamlined our operations. It's reliable, efficient, and has excellent reporting features. His technical skills and project management were outstanding.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AJ</div>
+                        <div class="author-info">
+                            <h4>Ali Jafri</h4>
+                            <p>Operations Manager, TransLogix</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Working with Wasiullah on our URL shortener project was a great experience. He delivered a robust, scalable solution with excellent analytics capabilities. Highly recommended for complex web applications.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <h4>Muhammad Khan</h4>
+                            <p>CTO, LinkMetrics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tech Insights</h2>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">May 15, 2025</span>
+                        <h3 class="blog-title">Secure Authentication Best Practices</h3>
+                        <p class="blog-excerpt">Learn how to implement robust authentication systems with modern security standards to protect user data and prevent breaches.</p>
+                        <a href="#" class="btn btn-outline">Read Article</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">April 28, 2025</span>
+                        <h3 class="blog-title">Optimizing React Performance</h3>
+                        <p class="blog-excerpt">Practical techniques to improve your React application's speed and user experience through code splitting and memoization.</p>
+                        <a href="#" class="btn btn-outline">Read Article</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">March 10, 2025</span>
+                        <h3 class="blog-title">Node.js Microservices Architecture</h3>
+                        <p class="blog-excerpt">Building scalable backend systems with Node.js microservices. Learn patterns for service decomposition and communication.</p>
+                        <a href="#" class="btn btn-outline">Read Article</a>
                     </div>
                 </div>
             </div>
@@ -1033,10 +1331,20 @@
                             <p>Hyderabad, Pakistan</p>
                         </div>
                     </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/wasiullah</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" placeholder="Your Name" required>
                         </div>
@@ -1050,6 +1358,9 @@
                             <textarea placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1070,6 +1381,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Enhanced Three.js 3D Background with Tech Logos
@@ -1247,6 +1563,8 @@
             });
             
             // GSAP animations for elements
+            gsap.registerPlugin(ScrollTrigger);
+            
             gsap.from('.hero-content', {
                 duration: 1,
                 y: 50,
@@ -1285,6 +1603,63 @@
                 y: 30,
                 opacity: 0,
                 stagger: 0.2
+            });
+            
+            gsap.from('.testimonial-card', {
+                scrollTrigger: {
+                    trigger: '#testimonials',
+                    start: 'top 80%'
+                },
+                duration: 0.8,
+                y: 30,
+                opacity: 0,
+                stagger: 0.2
+            });
+            
+            gsap.from('.blog-card', {
+                scrollTrigger: {
+                    trigger: '#insights',
+                    start: 'top 80%'
+                },
+                duration: 0.8,
+                y: 30,
+                opacity: 0,
+                stagger: 0.2
+            });
+            
+            // Add scroll-to-top functionality
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    contactForm.reset();
+                    successMessage.style.display = 'none';
+                }, 3000);
             });
         });
     </script>
