@@ -23,18 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create floating tech logos
     const techLogos = [];
     const techIcons = [
-        { name: "HTML", color: 0xe44d26 },
-        { name: "CSS", color: 0x264de4 },
-        { name: "JS", color: 0xf0db4f },
         { name: "React", color: 0x61dafb },
+        { name: "Laravel", color: 0xff2d20 },
         { name: "Node", color: 0x68a063 },
         { name: "PHP", color: 0x777bb3 },
+        { name: "Python", color: 0x3776ab },
+        { name: "PostgreSQL", color: 0x336791 },
         { name: "MySQL", color: 0x00758f },
-        { name: "WordPress", color: 0x21759b },
         { name: "Git", color: 0xf05033 },
-        { name: "Bootstrap", color: 0x563d7c },
         { name: "MongoDB", color: 0x4db33d },
-        { name: "Python", color: 0x3776ab }
+        { name: "Tailwind", color: 0x06b6d4 }
     ];
 
     // Create a sphere for each tech logo
@@ -162,14 +160,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Mobile menu toggle
+    // Enhanced Mobile menu toggle (closes menu on link click)
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
 
     mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ?
             '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
     });
 
     // GSAP animations for elements
@@ -183,10 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     gsap.from('.section-title', {
-        scrollTrigger: {
-            trigger: '.section-title',
-            start: 'top 80%'
-        },
+        scrollTrigger: { trigger: '.section-title', start: 'top 80%' },
         duration: 0.8,
         y: 30,
         opacity: 0,
@@ -194,10 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     gsap.from('.experience-item', {
-        scrollTrigger: {
-            trigger: '.experience-item',
-            start: 'top 90%'
-        },
+        scrollTrigger: { trigger: '#experience', start: 'top 80%' },
         duration: 0.8,
         y: 30,
         opacity: 0,
@@ -205,36 +205,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     gsap.from('.project-card', {
-        scrollTrigger: {
-            trigger: '.project-card',
-            start: 'top 90%'
-        },
+        scrollTrigger: { trigger: '#projects', start: 'top 80%' },
         duration: 0.8,
         y: 30,
         opacity: 0,
         stagger: 0.2
     });
 
-    gsap.from('.testimonial-card', {
-        scrollTrigger: {
-            trigger: '#testimonials',
-            start: 'top 80%'
-        },
+    gsap.from('.ai-card', {
+        scrollTrigger: { trigger: '#ai-skills', start: 'top 80%' },
         duration: 0.8,
-        y: 30,
+        y: 40,
         opacity: 0,
-        stagger: 0.2
-    });
-
-    gsap.from('.blog-card', {
-        scrollTrigger: {
-            trigger: '#insights',
-            start: 'top 80%'
-        },
-        duration: 0.8,
-        y: 30,
-        opacity: 0,
-        stagger: 0.2
+        stagger: 0.15,
+        ease: 'power2.out'
     });
 
     // Add scroll-to-top functionality
@@ -255,20 +239,61 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Form submission handling
+    // Form submission handling with Web3Forms
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
+    const submitBtn = document.getElementById('submitBtn');
 
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        // Show success message
-        successMessage.style.display = 'block';
+        // 1. Change button state to show it's loading
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.disabled = true;
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            contactForm.reset();
-            successMessage.style.display = 'none';
-        }, 3000);
+        // 2. Gather the form data
+        const formData = new FormData(contactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        try {
+            // 3. Send data to Web3Forms API
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200) {
+                // 4. Success! Show your success message
+                successMessage.style.display = 'block';
+                contactForm.reset();
+
+                // Hide success message after 4 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 4000);
+            } else {
+                // API returned an error
+                console.log(result);
+                alert("Sorry, something went wrong. Please try again or email me directly.");
+            }
+        } catch (error) {
+            // Network error
+            console.log(error);
+            alert("Network error. Please check your internet connection and try again.");
+        } finally {
+            // 5. Restore the button to its original state
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = false;
+        }
     });
 });

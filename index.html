@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasiullah Sehto | Full Stack Developer</title>
-    <meta name="description" content="Full Stack Developer specializing in React, Node.js, and modern web technologies. Creating responsive web solutions with robust backend systems.">
-    <meta name="keywords" content="web developer, full stack developer, react, node.js, portfolio, web development">
-    <meta name="author" content="Wasiullah Sehto">
+    <title>Wasiullah Sahito | Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer specializing in React, Laravel, Node.js, and modern web technologies. Creating responsive web solutions with robust backend systems.">
+    <meta name="keywords" content="web developer, full stack developer, react, node.js, laravel, portfolio, web development">
+    <meta name="author" content="Wasiullah Sahito">
     
+    <!-- Three.js and GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <!-- Fonts and Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -31,8 +36,7 @@
                     <a href="#about">About</a>
                     <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#insights">Insights</a>
+                    <a href="#ai-skills">AI Workflow</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <button class="mobile-menu-btn">
@@ -47,12 +51,13 @@
         <canvas id="three-canvas"></canvas>
         <div class="container">
             <div class="hero-content">
-                <h1>Wasiullah Sehto</h1>
-                <h2>Full Stack Web Developer</h2>
-                <p>Building responsive and efficient web solutions with expertise in modern technologies. Passionate about creating seamless user experiences and robust backend systems.</p>
+                <h1>Wasiullah Sahito</h1>
+                <h2>Full Stack Developer</h2>
+                <p>Building responsive and efficient web solutions with a strong background in backend development, authentication systems, and scalable API architecture.</p>
                 <div class="btn-container">
                     <a href="#projects" class="btn">View My Projects</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    <!-- Update href to your actual resume file path -->
+                    <a href="./Wasiullah.pdf" target="_blank" class="btn btn-outline"><i class="fas fa-file-download"></i> Download Resume</a>
                 </div>
             </div>
         </div>
@@ -67,62 +72,70 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Professional Summary</h3>
-                    <p>Full Stack Web Developer with 2+ years of hands-on experience in end-to-end web development. Proficient in HTML, CSS, JavaScript, React.js, Bootstrap, PHP, Laravel, Node.js, MySQL, and WordPress (Elementor).</p>
-                    <p>Skilled in building responsive websites, optimizing performance, and integrating SEO/analytics. Familiar with Weblow and Farmer for low-code solutions. Collaborative team player experienced in agile workflows and cross-functional projects.</p>
+                    <p>Full Stack Developer with 1+ years of hands-on experience in designing and optimizing web applications. Skilled in PHP, Laravel, Node.js, React.js, and MySQL. Strong background in backend development, authentication systems, and CRUD operations.</p>
+                    <p>Experienced in building responsive, SEO-friendly websites and scalable backend solutions. Proficient in integrating modern AI automation and RESTful APIs to streamline complex business workflows.</p>
                     
                     <div class="skills-container">
                         <div class="skill-category">
-                            <h4><i class="fas fa-paint-brush"></i> Frontend</h4>
+                            <h4><i class="fas fa-desktop"></i> Frontend</h4>
                             <div class="skill-list">
-                                <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
-                                <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
-                                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                                <div class="skill-item"><i class="fab fa-react"></i> React.js</div>
-                                <div class="skill-item"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-                                <div class="skill-item"><i class="fas fa-wind"></i> Tailwind CSS</div>
-                                <div class="skill-item"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+                                <div class="skill-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                                <div class="skill-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                                <div class="skill-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                                <div class="skill-item"><i class="devicon-react-original colored"></i> React.js</div>
+                                <div class="skill-item"><i class="devicon-react-original colored"></i> React Native</div>
+                                <div class="skill-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</div>
+                                <div class="skill-item"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
+                                <div class="skill-item"><i class="devicon-jquery-plain colored"></i> jQuery</div>
                             </div>
                         </div>
                         
                         <div class="skill-category">
                             <h4><i class="fas fa-server"></i> Backend & Databases</h4>
                             <div class="skill-list">
-                                <div class="skill-item"><i class="fab fa-php"></i> PHP</div>
-                                <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
-                                <div class="skill-item"><i class="fas fa-code"></i> Express.js</div>
-                                <div class="skill-item"><i class="fas fa-exchange-alt"></i> RESTful APIs</div>
-                                <div class="skill-item"><i class="fab fa-laravel"></i>Laravel</div>
-                                <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
-                                <div class="skill-item"><i class="fas fa-leaf"></i> MongoDB</div>
-                                <div class="skill-item"><i class="fas fa-cogs"></i> CRUD Operations</div>
+                                <div class="skill-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                                <div class="skill-item"><i class="devicon-laravel-original colored"></i> Laravel</div>
+                                <div class="skill-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                                <div class="skill-item"><i class="devicon-express-original colored" style="color:white;"></i> Express.js</div>
+                                <div class="skill-item"><i class="devicon-python-plain colored"></i> Python</div>
+                                <div class="skill-item"><i class="devicon-fastapi-plain colored"></i> FastAPI</div>
+                                <div class="skill-item"><i class="devicon-flask-plain colored" style="color:white;"></i> Flask</div>
+                                <div class="skill-item"><i class="devicon-mysql-plain colored"></i> MySQL</div>
+                                <div class="skill-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                                <div class="skill-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                                <div class="skill-item"><i class="devicon-sqlite-plain colored"></i> SQLite</div>
                             </div>
                         </div>
                         
                         <div class="skill-category">
-                            <h4><i class="fas fa-tools"></i> Tools & Platforms</h4>
+                            <h4><i class="fas fa-tools"></i> APIs, Tools & Automation</h4>
                             <div class="skill-list">
-                                <div class="skill-item"><i class="fab fa-wordpress"></i> WordPress</div>
-                                <div class="skill-item"><i class="fas fa-puzzle-piece"></i> Elementor</div>
-                                <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
-                                <div class="skill-item"><i class="fas fa-cloud"></i> Webflow</div>
-                                <div class="skill-item"><i class="fas fa-magic"></i> Framer</div>
+                                <div class="skill-item"><i class="devicon-graphql-plain colored"></i>GraphQL</div>
+                                   <div class="skill-item">
+            <i class="fas fa-server" style="color:#4cc9f0;"></i> REST API
+        </div>
+                                <div class="skill-item"><i class="fas fa-bolt" style="color: #4cc9f0;"></i> WebSockets</div>
+                                <div class="skill-item"><i class="devicon-git-plain colored"></i> Git</div>
+                                <div class="skill-item"><i class="fas fa-robot" style="color: #4cc9f0;"></i> AI Integration</div>
+                                <div class="skill-item"><i class="fas fa-project-diagram" style="color: #4cc9f0;"></i> n8n Automation</div>
+                                <div class="skill-item"><i class="fas fa-credit-card" style="color: #4cc9f0;"></i> Payment Gateways</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="about-image float">
-                    <h3>Technology Stack</h3>
-                    <p>I specialize in these technologies to build modern, scalable web applications</p>
+                    <h3>Core Stack</h3>
+                    <p>My primary technologies for scalable applications</p>
                     <div class="tech-stack">
-                        <div class="tech-icon"><i class="fab fa-html5"></i></div>
-                        <div class="tech-icon"><i class="fab fa-css3-alt"></i></div>
-                        <div class="tech-icon"><i class="fab fa-js"></i></div>
-                        <div class="tech-icon"><i class="fab fa-react"></i></div>
-                        <div class="tech-icon"><i class="fab fa-node-js"></i></div>
-                        <div class="tech-icon"><i class="fab fa-php"></i></div>
-                        <div class="tech-icon"><i class="fas fa-database"></i></div>
-                        <div class="tech-icon"><i class="fab fa-wordpress"></i></div>
+                        <div class="tech-icon"><i class="devicon-react-original colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-laravel-original colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-nodejs-plain colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-postgresql-plain colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-python-plain colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-javascript-plain colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-tailwindcss-plain colored"></i></div>
+                        <div class="tech-icon"><i class="devicon-git-plain colored"></i></div>
                     </div>
                 </div>
             </div>
@@ -133,60 +146,44 @@
     <section id="experience">
         <div class="container">
             <div class="section-title">
-                <h2>Work Experience</h2>
+                <h2>Work Experience & Education</h2>
             </div>
             <div class="experience-container">
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div class="experience-title">Web Developer</div>
-                        <div class="experience-date">2024 - 2025</div>
+                        <div class="experience-title">Full Stack Developer</div>
+                        <div class="experience-date">1st Jan 2024 - 3rd Jan 2025</div>
                     </div>
-                    <div class="experience-company"><i class="fas fa-building"></i> Codepro Software and Web Services</div>
+                    <div class="experience-company"><i class="fas fa-building"></i> CodePro Software and Web Services, Hyderabad</div>
                     <ul class="experience-details">
-                        <li>Developed responsive websites using HTML, CSS, JavaScript, and Bootstrap, ensuring cross-device compatibility</li>
-                        <li>Engineered backend solutions with PHP and Node.js, integrated MySQL/MongoDB databases, and optimized CRUD operations</li>
-                        <li>Built and customized WordPress sites using Elementor, enhancing client UX and functionality</li>
-                        <li>Debugged and optimized web applications, improving load times by 30% through image compression and code minification</li>
-                        <li>Collaborated with marketing teams to integrate analytics and support campaign funnels</li>
+                        <li>Designed and developed responsive websites using HTML, CSS, JavaScript, and Bootstrap.</li>
+                        <li>Built backend solutions with PHP, Laravel, and Node.js, integrated MySQL/MongoDB, and optimized CRUD operations.</li>
+                        <li>Debugged and optimized web apps, improving load times by <strong>30%</strong> through caching and code minification.</li>
                     </ul>
                 </div>
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="experience-title">Backend Developer Intern</div>
-                        <div class="experience-date">Jun 2025 - Jul 2025</div>
+                        <div class="experience-date">1st Jun 2025 - 2nd Jul 2025</div>
                     </div>
-                    <div class="experience-company"><i class="fas fa-building"></i> Axoon Solutions</div>
+                    <div class="experience-company"><i class="fas fa-globe"></i> Axoon Solutions, Remote</div>
                     <ul class="experience-details">
                         <li>Assisted in developing and maintaining server-side applications and APIs.</li>
                         <li>Built backend functionality and integrated frontend with server-side logic.</li>
                         <li>Wrote clean, scalable, and efficient backend code using Laravel, Node.js, and Express.js.</li>
-                        <li>Participated in debugging, testing, and code reviews to ensure high-quality deliverables.</li>
-                        <li>Gained practical experience in collaborative backend development workflows.</li>
                     </ul>
                 </div>
-                
                 
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="experience-title">Education</div>
                         <div class="experience-date">2022 - 2026</div>
                     </div>
-                    <div class="experience-company"><i class="fas fa-graduation-cap"></i> SZABIST University</div>
+                    <div class="experience-company"><i class="fas fa-graduation-cap"></i> SZABIST University, Hyderabad</div>
                     <ul class="experience-details">
-                        <li>BS Computer Science (Expected 2026)</li>
+                        <li>BS Computer Science (Completed)</li>
                         <li>Pre-Engineering at Public School Hyderabad (2019-2021)</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">Certifications</div>
-                        <div class="experience-date">2025</div>
-                    </div>
-                    <div class="experience-company"><i class="fas fa-certificate"></i> Codepro Software and Web Services</div>
-                    <ul class="experience-details">
-                        <li>Internship Completion Certificate - Comprehensive Web Development</li>
-                        <li>Technologies: HTML, CSS, JavaScript, PHP, MySQL, WordPress</li>
                     </ul>
                 </div>
             </div>
@@ -200,189 +197,127 @@
                 <h2>Key Projects</h2>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder" style="background-image: url('./oddco.png'); background-size: cover; background-position: center;">
-                            <!-- <i class="fas fa-paint-brush"></i> -->
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Oddco Studios Portfolio</h3>
-                        <p class="project-description">Portfolio website for animation studio made for client Samiullah Sehto. Custom design with smooth animations and responsive layout.</p>
-                        <div class="project-tech">
-                            <div class="tech-item">HTML</div>
-                            <div class="tech-item">JavaScript</div>
-                            <div class="tech-item">CSS</div>
-                            <div class="tech-item">PHP</div>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="http://oddcostudios.com/" class="btn btn-small">View Live</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
                 
+                <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-placeholder">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Login Authentication System</h3>
-                        <p class="project-description">Secure authentication system with password hashing, validation, and session management. Implements industry-standard security practices.</p>
-                        <div class="project-tech">
-                            <div class="tech-item">PHP</div>
-                            <div class="tech-item">HTML</div>
-                            <div class="tech-item">CSS</div>
-                            <div class="tech-item">Security</div>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-small">View Live</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">URL Shortener</h3>
-                        <p class="project-description">Custom URL shortening service with click analytics, tracking, and user dashboard. Features custom alias creation and QR code generation.</p>
-                        <div class="project-tech">
-                            <div class="tech-item">PHP</div>
-                            <div class="tech-item">HTML</div>
-                            <div class="tech-item">CSS</div>
-                            <div class="tech-item">MySQL</div>
-                            <div class="tech-item">Analytics</div>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-small">View Live</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder" style="background-image: url('./fleet.png'); background-size: cover; background-position: center;">
-                            <!-- <i class="fas fa-truck"></i> -->
+                            <img src="./fleet.png" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Fleet Management System</h3>
-                        <p class="project-description">Comprehensive web-based system for vehicle inspections, fueling logs, kilometer tracking, and maintenance scheduling with automated alerts.</p>
+                        <p class="project-description">Built a full-featured fleet management dashboard with analytics, vehicle profiles, inspection logs, automated alerts, and secure API endpoints.</p>
                         <div class="project-tech">
-                            <div class="tech-item">React</div>
-                            <div class="tech-item">TailwindCSS</div>
-                            <div class="tech-item">Node.JS</div>
-                            <div class="tech-item">Express.js</div>
-                            <div class="tech-item">REST APIs</div>
+                            <div class="tech-item"><i class="devicon-react-original colored"></i> React.js</div>
+                            <div class="tech-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</div>
+                            <div class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                            <div class="tech-item"><i class="devicon-express-original colored" style="color:white;"></i> Express.js</div>
                         </div>
                         <div class="project-buttons">
-                            <a href="#" class="btn btn-small">View Live</a>
-                            <a href="https://github.com/WasiullahSahito/FleetManagementSystem.git" class="btn btn-small btn-outline">GitHub</a>
+                            <a href="https://github.com/WasiullahSahito/FleetManagementSystem.git" target="_blank" class="btn btn-small btn-outline"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <img src="./image (2).png" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">OnlyMetric Dashboard</h3>
+                        <p class="project-description">Developed a COGS Intelligence Dashboard for hospitality. Tracks operational costs in real time. Features modular management for suppliers, invoices, and staff rostering.</p>
+                        <div class="project-tech">
+                            <div class="tech-item"><i class="devicon-laravel-original colored"></i> Laravel</div>
+                            <div class="tech-item"><i class="devicon-react-original colored"></i> React.js</div>
+                            <div class="tech-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://happy-hour-main-u4wqug.laravel.cloud/" target="_blank" class="btn btn-small"><i class="fas fa-external-link-alt"></i> View Live</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <img src="./image.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Tradefast AI Sales Engine</h3>
+                        <p class="project-description">Intelligent dashboard managing leads, quotes, and calls. Features an AI Voice Agent for inbound calls, automated tracking, and WhatsApp booking integration.</p>
+                        <div class="project-tech">
+                            <div class="tech-item"><i class="devicon-laravel-original colored"></i> Laravel</div>
+                            <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML/CSS</div>
+                            <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JS</div>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://darkslategrey-okapi-878514.hostingersite.com/" target="_blank" class="btn btn-small"><i class="fas fa-external-link-alt"></i> View Live</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <img src="./oddco.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ODDCO Studios Website</h3>
+                        <p class="project-description">Developed a modern 2D animation portfolio website with responsive UI and complete SEO optimization for client visibility.</p>
+                        <div class="project-tech">
+                            <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML/CSS</div>
+                            <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JS</div>
+                            <div class="tech-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://oddcostudios.com/" target="_blank" class="btn btn-small"><i class="fas fa-external-link-alt"></i> View Live</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
+    <!-- AI Tools & Workflow Section -->
+    <section id="ai-skills">
         <div class="container">
             <div class="section-title">
-                <h2>Client Testimonials</h2>
+                <h2>AI Tools & Workflow</h2>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        Wasiullah delivered a stunning portfolio for our animation studio. His attention to detail and creative problem-solving skills were impressive. The site exceeded our expectations in both design and functionality.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SS</div>
-                        <div class="author-info">
-                            <h4>Samiullah Sehto</h4>
-                            <p>Founder, Oddco Studios</p>
-                        </div>
-                    </div>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Claude</h3>
+                    <p>Used for complex logic comprehension, deep refactoring, and processing long-context architectural planning.</p>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        The fleet management system developed by Wasiullah has streamlined our operations. It's reliable, efficient, and has excellent reporting features. His technical skills and project management were outstanding.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">ZS</div>
-                        <div class="author-info">
-                            <h4>Zaid Shah</h4>
-                            <p>Operations Manager, SIEHS</p>
-                        </div>
-                    </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-comment-dots"></i></div>
+                    <h3>ChatGPT</h3>
+                    <p>Leveraged for rapid debugging, generating boilerplate code, and exploring library/API documentation.</p>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        Working with Wasiullah on our URL shortener project was a great experience. He delivered a robust, scalable solution with excellent analytics capabilities. Highly recommended for complex web applications.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MK</div>
-                        <div class="author-info">
-                            <h4>Muhammad Khan</h4>
-                            <p>CTO, LinkMetrics</p>
-                        </div>
-                    </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fab fa-google"></i></div>
+                    <h3>Gemini</h3>
+                    <p>Applied for advanced research, brainstorming scalable solutions, and continuous technology learning.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Insights Section -->
-    <section id="insights">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tech Insights</h2>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">May 15, 2025</span>
-                        <h3 class="blog-title">Secure Authentication Best Practices</h3>
-                        <p class="blog-excerpt">Learn how to implement robust authentication systems with modern security standards to protect user data and prevent breaches.</p>
-                        <a href="#" class="btn btn-outline">Read Article</a>
-                    </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub Copilot</h3>
+                    <p>Integrated into IDE for seamless auto-completion, inline assistance, and accelerating test creation.</p>
                 </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">April 28, 2025</span>
-                        <h3 class="blog-title">Optimizing React Performance</h3>
-                        <p class="blog-excerpt">Practical techniques to improve your React application's speed and user experience through code splitting and memoization.</p>
-                        <a href="#" class="btn btn-outline">Read Article</a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">March 10, 2025</span>
-                        <h3 class="blog-title">Node.js Microservices Architecture</h3>
-                        <p class="blog-excerpt">Building scalable backend systems with Node.js microservices. Learn patterns for service decomposition and communication.</p>
-                        <a href="#" class="btn btn-outline">Read Article</a>
-                    </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Vibe Coding</h3>
+                    <p>Embracing natural language-to-code workflows to rapidly prototype full-stack features and MVP builds.</p>
                 </div>
             </div>
         </div>
@@ -428,30 +363,31 @@
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-github"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <p>https://www.linkedin.com/in/wasiullah-sehto-bba35a224</p>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/WasiullahSahito" target="_blank" style="color: #cbd5e1; text-decoration: none;">WasiullahSahito</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" method="POST" action="https://api.web3forms.com/submit" >
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                                    <input type="hidden" name="access_key" value="50cd5ed2-59ab-4828-bb8f-bfe81e899830">
+                            <input type="text" placeholder="Your Name" name="name" aria-label="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" placeholder="Your Email" name="email" aria-label="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject">
+                            <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
+                            <textarea placeholder="Your Message" name="message" aria-label="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
                         <div class="success-message" id="successMessage">
                             <i class="fas fa-check-circle"></i> Your message has been sent successfully!
                         </div>
@@ -465,11 +401,12 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/wasiullah-sehto-bba35a224" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/WasiullahSahito" class="social-link"><i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> -->
+               <a href="https://github.com/WasiullahSahito" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/wasiullah-sahito-bba35a224" target="_blank" rel="noopener noreferrer"  class="social-link"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="copyright">
-                &copy; 2025 Wasiullah Sehto. All Rights Reserved.
+                &copy; 2025 Wasiullah Sahito. All Rights Reserved.
             </div>
         </div>
     </footer>
